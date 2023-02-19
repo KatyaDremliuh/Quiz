@@ -74,7 +74,7 @@ const randomQuestion = () => {
   if (indexOfPage == listOfQuestions.length) {
     quizOver();
   } else {
-    if (completedAnswers > 0) {
+    if (completedAnswers.length > 0) {
       completedAnswers.forEach((item) => {
         if (item == randomNumber) {
           hitDuplicate = true;
@@ -130,16 +130,16 @@ const enableOptions = () => {
 const answerTracker = () => {
   listOfQuestions.forEach(() => {
     const div = document.createElement("div");
-    answerTracker.appendChild(div);
+    answersTracker.appendChild(div);
   });
 };
 
 const updateAnswerTracker = (status) => {
-  answerTracker.children[indexOfPage - 1].classList.add(`${status}`);
+  answersTracker.children[indexOfPage - 1].classList.add(`${status}`);
 };
 
 const validate = () => {
-  if (!optionElements[0].contains("disabled")) {
+  if (!optionElements[0].classList.contains("disabled")) {
     alert("Выберите один из вариантов ответов");
   } else {
     randomQuestion();
