@@ -9,7 +9,7 @@ const optionElements = document.querySelectorAll(".option"); // All our options
 const question = document.getElementById("question");
 
 const numberOfQuestion = document.getElementById("number-of-question");
-const countOfQuestions = document.getElementById("number-of-all-questions");
+const numberOfAllQuestions = document.getElementById("number-of-all-questions");
 
 let indexOfQuestion;
 let indexOfPage = 0;
@@ -21,7 +21,7 @@ let score = 0;
 
 const correctAnswer = document.getElementById("correct-answer");
 const numberOfAllQuestions2 = document.getElementById(
-  "number-of-all-questions"
+  "number-of-all-questions-2"
 );
 const btnTryAgain = document.getElementById("btn-try-again");
 
@@ -97,7 +97,7 @@ const listOfQuestions = [
   },
 ];
 
-numberOfAllQuestions2.innerHTML = listOfQuestions.length;
+numberOfAllQuestions.innerHTML = listOfQuestions.length;
 
 const load = () => {
   question.innerHTML = listOfQuestions[indexOfQuestion].question;
